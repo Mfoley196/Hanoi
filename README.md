@@ -1,6 +1,8 @@
 To run the game, simply run the command:
 
-> python TowerOfHanoi.py
+`
+python TowerOfHanoi.py
+`
 
 Valid Commands:
 
