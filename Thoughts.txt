@@ -41,4 +41,6 @@ Tested the game with three disks to make sure everything works
 
 Added some secret debug commands + a quit function
 
+How object oriented is this, really? I have a class for the game itself...?
+
 
