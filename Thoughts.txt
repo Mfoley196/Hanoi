@@ -36,3 +36,5 @@ Got first three checks, last is proving more difficult
 Got it! Just made it a separate if-condition. Probably not the most elegant, but it works
 
 Now add check for if the game is solved
+
+Added some secret debug commands + a quit function

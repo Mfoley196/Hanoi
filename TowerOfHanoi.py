@@ -78,6 +78,8 @@ class TowerOfHanoi:
         if self.solved:
             print("Congratulations! You solved the puzzle!")
 
+    # Checks if the input is a valid ring move command
+    # if so, returns True, otherwise performs the command and returns False
     def parse_input(self, raw):
         raw = raw.strip().lower()
         words = raw.split(" ")
@@ -89,7 +91,7 @@ class TowerOfHanoi:
                     self.display(words[1])
                     return False
                 else:
-                    raise Exception
+                    raise TypeError
 
             # If command is formatted properly
             if (len(words) == 5 and words[0] in self.rings.keys() and 
@@ -106,21 +108,22 @@ class TowerOfHanoi:
                 print(self.poles)
                 return False
 
-            if "quit" or "exit" in words:
+            if "quit" in words:
                 print("Goodbye!")
                 sys.exit(0)
 
             # If no if statement has run, raise exception to show 
             # error message and return false
-            raise Exception
+            raise TypeError
 
-        except BaseException:
+        except (IndexError, TypeError):
             print("Incorrect command. Please try again.")
             return False
 
-    def display(self, ring):
-        print("From bottom of pole " + ring.upper() + " to top: ")
-        print(self.poles[ring])
+    # Display the requested pole
+    def display(self, pole):
+        print("From bottom of pole " + pole.upper() + " to top: ")
+        print(self.poles[pole])
 
 if __name__ == "__main__":
     TowerOfHanoi()
