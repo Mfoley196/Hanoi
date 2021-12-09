@@ -1,0 +1,38 @@
+Thought Process:
+
+# of rings is fixed - no need to provide that functionality?
+no need to actually implement a _solver_
+
+Define a ToH class
+- init: just init the poles, with the rings on pole A
+- have a rings dict with the rings[ring name] = ring size as key:value pair
+- have a solved variable to detect if the game is over or not
+
+Method for main game loop
+- get input from user
+- write the input parser
+- loop until valid input is received
+
+Input Parser:
+- what to return?: true or false. Only return true if move ring command entered
+- Easiest thing to handle is displaying input if display command is entered
+- next, validate whether command is in proper form
+- if it is, return true, otherwise throw exception to show error message
+  and return false
+- return false is display command is entered - not a valid ring move
+- If none of the if-statements return True, throw exception and print error
+- input parser only handles if command is properly formatted
+  It does not check if ring can be moved
+
+Next:
+Input is a valid command - now check if the move can be made
+- Is the ring on the pole?
+- Is the ring on top of the pole?
+- Is target == destination?
+- Is there a smaller ring on the destination pole?
+
+Got first three checks, last is proving more difficult
+
+Got it! Just made it a separate if-condition. Probably not the most elegant, but it works
+
+Now add check for if the game is solved
