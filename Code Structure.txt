@@ -1,0 +1,14 @@
+Code Structure:
+
+All code is within the TowerOfHanoi() class.
+
+The class __init__ method initializes the poles and rings positions, and sets the solved boolean to False. Then, it runs the game.
+
+The run_game() method loops until the puzzle is solved (or the user quits).
+First, run_game() gets user input, and parses it to see if it's a valid command. 
+
+The input parser checks if a command is in the form "[ring] FROM [target pole] to [destination pole]", though it also handles the display command, and some debug commands I coded in. If the command is validly formed, it returns True, otherwise it returns False. The parser uses a try-catch block to handle bad commands, so any errors/exceptions during processing are handled with an error message.
+
+After input is parsed, we know we have a valid command. Now, run_game() checks if the move is valid. First, an if statement checks that there are rings to be moved on the target pole, that the top-most ring on the target pole is the one the user wants to move, and that the target pole isn't the same as the destination pole. Next, there is another check to make sure there isn't a smaller ring on the destination pole. This check returns True if the top-most disk on the destination pole is larger than the ring the user wants to move, or if the destination pole is empty.
+
+If a valid move is entered, the ring is popped from the target pole, and moved to the destination pole, with a message describing the move. After every move, the game checks if the puzzle has been solved (that is, is the disks are in the right order on pole C).

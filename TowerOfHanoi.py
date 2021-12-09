@@ -99,7 +99,7 @@ class TowerOfHanoi:
                 words[3] == 'to' and words[4] in self.valid_poles):
                 return True
 
-            # Secret debug command
+            # Secret debug commands
             if "solved" in words:
                 self.solved = True
                 return True
